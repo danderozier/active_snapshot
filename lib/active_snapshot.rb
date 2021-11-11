@@ -1,5 +1,8 @@
 require "active_record"
-require "activerecord-import"
+
+if ActiveRecord::VERSION::MAJOR <= 5
+  require "activerecord-import"
+end
 
 require "active_snapshot/version"
 

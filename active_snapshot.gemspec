@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "activerecord"
   s.add_runtime_dependency "railties"
-  s.add_runtime_dependency "activerecord-import"
+  s.add_runtime_dependency "activerecord-import" ### Only required for Rails 5.x and below
 
   s.add_development_dependency "rake"
   s.add_development_dependency "minitest"

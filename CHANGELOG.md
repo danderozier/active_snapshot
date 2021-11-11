@@ -1,9 +1,11 @@
 CHANGELOG
 ---------
 
-- **UNRELEASED**
+- **UNRELEASED** - **0.3.0**
   * [View Diff](https://github.com/westonganger/active_snapshot/compare/v0.2.2...master)
-  * Fix unique constraint on snapshots.identifier column
+  * Remove validation on call to `.import` as any blatant snapshot validations exceptions will be raised by the database constraints
+  * Use `.insert_all` instead of `.import` for Rails 6+
+  * Fix unique constraint on `snapshots.identifier` column
 
 - **v0.2.2** - August 27, 2021
   * [View Diff](https://github.com/westonganger/active_snapshot/compare/v0.2.1...v0.2.2)

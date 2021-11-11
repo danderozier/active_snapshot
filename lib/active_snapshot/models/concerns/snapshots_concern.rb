@@ -30,9 +30,13 @@ module ActiveSnapshot
         end
       end
 
-      SnapshotItem.import(snapshot_items, validate: true)
+      if ActiveRecord::VERSION::MAJOR <= 5
+        SnapshotItem.import(snapshot_items, validate: false)
+      else
+        SnapshotItem.insert_all!(snapshot_items.each{|x| x.created_at = Time.now }.collect(&:attributes))
+      end
 
-      snapshot
+      return snapshot
     end
 
     class_methods do
